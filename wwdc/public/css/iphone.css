@@ -1,0 +1,131 @@
+body {
+	background-color: black !important;
+	width: 320px;
+	margin: 0px;
+	padding: 0px;
+	min-height: 416px;
+}
+
+#whole {
+	position: absolute;
+	min-height: 416px;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: auto;
+	background-color: black;
+}
+
+#admin_bar {
+	width: 300px;
+	font-size: 14px;
+	background-color: black;
+	color: white;
+	margin-bottom: 10px;
+	position: relative;
+	padding: 5px;
+}
+
+#admin_bar a {
+	font-size: 16px;
+	color: white;
+}
+
+input[type="text"] {
+	width: 280px;
+	height: 26px;
+	font-size: 16px;
+}
+
+button[type="submit"] {
+	font-size: 16px;
+}
+
+.span-24 {
+	width: 300px;
+}
+
+#live {
+	border: 5px solid #7c7c7c;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	background-color: #ececec;
+	position: absolute;
+
+	margin-left: auto !important;
+	margin-right: auto !important;
+
+	top:  140px;
+	bottom: 10px;
+	left: 0px;
+	right: 0px;
+
+	width: 290px;
+	height: auto;
+	clear: both;
+}
+
+#live_content {
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+
+	font-size: 14px;
+	padding: 5px;
+	width: 260px;
+	overflow-y: scroll;
+}
+
+#live_content span {
+	margin-left: 1em;
+	font-size: 1.0em;
+}
+
+.header_bar {
+	margin-top: 15px;
+	height: 24px;
+	font-size: 14px;
+	line-height: 24px;
+	color: #fff;
+	display: none;
+}
+
+.header_bar_update {
+	font-size: 1em;
+	line-height: 20pt;
+	color: #fff;
+}
+
+#footer {
+	margin-top: 2em;
+	text-align: center;
+	color: #FFF;
+	height: 10px;
+}
+
+#footer a {
+	color: #ffa500;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #ffd000;
+}
+
+tt {
+	color: darkblue;
+}
+
+.ad {
+	margin: 5px auto;
+	width: 950px;
+	height: 80px;
+	cursor: pointer;	
+}
+
+.container { min-height: 100%; }
+
+.alt {
+	background-color: #e0e0e0;
+}

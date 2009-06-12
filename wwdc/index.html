@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<base target="_blank"/>
+		<title>hypo 夏日特輯 - WWDC '09 中文線上轉播</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8;"/>
+		<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">    
+		<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection">
+		<script src="js/jquery-1.3.2.min.js" charset="utf-8" type="text/javascript"></script>
+		<script src="js/cycle.js" charset="utf-8" type="text/javascript"></script>
+		<script src="js/main.js" charset="utf-8" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container prepend-top">
+			<div class="header_bar span-20"> &nbsp;&nbsp;WWDC 09 中文線上轉播 <span id="update_msg" style="font-size: 12px; margin-left: 30px;">讀取記錄中...</span></div>
+			<div class="header_bar_update span-4 last" style="text-align: right;"><img src="img/hypo.png" alt="hypo"/></div>
+		</div>
+
+		<div id="live" class="container">
+	
+			<iframe id="chat_frame" style="width:210px;height:500px;float:right;" src="http://hypowwdchat.appspot.com">
+			    
+			</iframe>
+			
+			<div id="live_content" class="span-20">
+				<div style="text-align: center;"><strong>歡迎加入 WWDC 2009 中文線上轉播！</strong></div>
+			</div>
+		</div>
+		
+		<div class="ad">
+			<span style="width: 470px;height:65px;overflow-y:hide;display:box;float:left;">
+			<a href="http://hypo.cc/ticket.html" target="_blank"><img src="img/ticket.png"></a>
+			</span>
+			
+			<span id="cycle_span" style="width: 470px;height:65px;overflow-y:hide;display:box;float:right;">
+			<a href="http://marshmallowapps.com/NallyTouch" target="_blank"><img src="img/nally.png"></a>
+			<a href="http://lithoglyph.com/tapexpense" target="_blank"><img src="img/tapexpense.png"></a>
+			</span>
+		</div>
+
+		<script type="text/javascript" charset="utf-8">
+		var lastid = 0;
+		var interval = 10;
+		var next_update = interval;
+		var alt = true;
+		var msg_base = "<div><tt>{{time}}</tt><span>{{message}}</span></div>";
+		var msg_base_alt = "<div class=\"alt\"><tt>{{time}}</tt><span>{{message}}</span></div>";
+		
+		function countdown()
+		{
+			next_update--;
+			
+			if (next_update == 0)
+				fetchNextUpdate();
+			else
+			{
+				$('#update_msg').html('下次更新： ' + next_update + ' 秒');
+				setTimeout(function() { countdown(); }, 1000);
+			}
+		}
+		
+		function fetchNextUpdate()
+		{
+			$('#update_msg').html('正在更新...');
+			$.get('/api/update', {'lastid': lastid}, function(data) {
+				var item;
+				while(item = data.pop())
+				{
+					if (item.id > lastid) lastid = item.id;
+					var str_item = alt ? msg_base_alt : msg_base;
+					alt = !alt;
+					var e = $(str_item.replace('{{time}}', item.time).replace('{{message}}', item.message));
+					e.prependTo('#live_content');
+					e.hide();
+					e.slideDown('slow');
+				}				
+			
+				$('#update_msg').html('下次更新： 10 秒');
+				next_update = interval;
+				setTimeout(function() { countdown(); }, 1000);			
+			}, 'json');
+		}
+		
+		$(function(){
+			$('#cycle_span').cycle({fx:'fade',speed:1500,timeout:60000,pause:1});
+			$(window).resize(function() {
+				$('#live_content').css('height', $(window).height() - 190 + 'px');
+    			$('#chat_frame').css('height', $(window).height() - 190 + 'px');
+			});
+			$('#live_content').css('height', $(window).height() - 190 + 'px');
+			$('#chat_frame').css('height', $(window).height() - 190 + 'px');
+			fetchNextUpdate();
+		});
+		</script>
+		
+		<div id="footer">
+			網頁設計、現場轉播： <a href="http://itszero.org/">itsZero</a> | 服務提供： <a href="http://hypo.cc/">hypo.cc</a>
+		</div>
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+			try {
+				var pageTracker = _gat._getTracker("UA-7277533-2");
+				pageTracker._trackPageview();
+				} catch(err) {}</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+application: hypowwdc
+version: 5
+runtime: python
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: public/css
+  
+- url: /js
+  static_dir: public/js
+  
+- url: /img
+  static_dir: public/img
+  
+- url: /api/.*
+  script: main.py
+  
+- url: /admin.*
+  script: main.py
+  login: admin
+
+- url: /favicon.ico
+  static_files: public/favicon.ico
+  upload: public/favicon.ico
+
+- url: /
+  static_files: index.html
+  upload: index.html

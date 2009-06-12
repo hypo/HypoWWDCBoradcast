@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>hypo 夏日特輯 - WWDC '09 中文線上轉播</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8;"/>
+		 <meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		
+		<link media="screen and (min-device-width: 481px)" rel="stylesheet" href="css/screen.css" type="text/css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">    
+		<!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+		<link media="screen and (min-device-width: 481px)" type="text/css" rel="stylesheet" href="css/admin.css">
+		<link media="only screen and (max-device-width: 480px)" type="text/css" rel="stylesheet" href="css/iphone.css">
+
+		<script src="js/jquery-1.3.2.min.js" charset="utf-8" type="text/javascript"></script>
+		<script src="js/cycle.js" charset="utf-8" type="text/javascript"></script>
+		<script src="js/main.js" charset="utf-8" type="text/javascript"></script>
+		<style type="text/css" media="screen">
+			body { background-color: black; }
+		</style>
+	</head>
+	<body onload="setTimeout(scrollTo, 0, 0, 1)">
+	<div id="whole">
+
+		<div id="admin_bar">
+			<div class="span-24"><form action="/admin/post" method="post">訊息內容：<input id="msg_field" name="msg" type="text" size="100"/> <button type="submit">發送</button><input type="hidden" name="action" value="put"/></form>小幫手：<a href="/admin/reset" onclick="return confirm('Are you sure?');">重設訊息</a> | <a href="{{logout_url}}">Logout</a></div>
+		</div>
+		
+		<div id="live">
+			<div id="live_content">
+				{% for update in updates %}
+				<div><tt><a href="/admin/delete?id={{ update.key }}" onclick="return confirm('Are you sure?')">{{ update.time|date:"h:i:s" }}</a></tt><span>{{ update.message }}</span></div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('#msg_field').focus();
+		</script>
+	</div>
+	</body>
+</html>
