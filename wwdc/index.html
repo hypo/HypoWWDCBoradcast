@@ -20,8 +20,7 @@
 
 		<div id="live" class="container">
 	
-			<iframe id="chat_frame" style="width:210px;height:500px;float:right;" src="http://hypowwdchat.appspot.com">
-			    
+			<iframe id="chat_frame" style="width:210px;height:500px;float:right;" src="chat.html">  
 			</iframe>
 			
 			<div id="live_content" class="span-20">
@@ -47,6 +46,7 @@
 		var alt = true;
 		var msg_base = "<div><tt>{{time}}</tt><span>{{message}}</span></div>";
 		var msg_base_alt = "<div class=\"alt\"><tt>{{time}}</tt><span>{{message}}</span></div>";
+		var firstUpdate = true;
 		
 		function countdown()
 		{
@@ -73,24 +73,30 @@
 					alt = !alt;
 					var e = $(str_item.replace('{{time}}', item.time).replace('{{message}}', item.message));
 					e.prependTo('#live_content');
-					e.hide();
-					e.slideDown('slow');
+					if (!firstUpdate)
+					{
+						e.hide();
+						e.slideDown('slow');
+					}
 				}				
 			
 				$('#update_msg').html('下次更新： 10 秒');
 				next_update = interval;
+				firstUpdate = false;
 				setTimeout(function() { countdown(); }, 1000);			
 			}, 'json');
 		}
 		
 		$(function(){
 			$('#cycle_span').cycle({fx:'fade',speed:1500,timeout:60000,pause:1});
+			var resizeDelta = 180;
+			var chatResizeDelta = 160;
 			$(window).resize(function() {
-				$('#live_content').css('height', $(window).height() - 190 + 'px');
-    			$('#chat_frame').css('height', $(window).height() - 190 + 'px');
+				$('#live_content').css('height', $(window).height() - resizeDelta + 'px');
+    			$('#chat_frame').css('height', $(window).height() - chatResizeDelta + 'px');
 			});
-			$('#live_content').css('height', $(window).height() - 190 + 'px');
-			$('#chat_frame').css('height', $(window).height() - 190 + 'px');
+			$('#live_content').css('height', $(window).height() - resizeDelta + 'px');
+			$('#chat_frame').css('height', $(window).height() - chatResizeDelta + 'px');
 			fetchNextUpdate();
 		});
 		</script>
@@ -98,6 +104,7 @@
 		<div id="footer">
 			網頁設計、現場轉播： <a href="http://itszero.org/">itsZero</a> | 服務提供： <a href="http://hypo.cc/">hypo.cc</a>
 		</div>
+<!--
 		<script type="text/javascript">
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -107,5 +114,6 @@
 				var pageTracker = _gat._getTracker("UA-7277533-2");
 				pageTracker._trackPageview();
 				} catch(err) {}</script>
+-->
 	</body>
 </html>

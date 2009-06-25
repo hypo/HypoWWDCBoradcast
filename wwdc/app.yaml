@@ -16,6 +16,9 @@ handlers:
 - url: /api/.*
   script: main.py
   
+- url: /chat/.*
+  script: main.py
+  
 - url: /admin.*
   script: main.py
   login: admin
@@ -23,6 +26,10 @@ handlers:
 - url: /favicon.ico
   static_files: public/favicon.ico
   upload: public/favicon.ico
+
+- url: /chat.html
+  static_files: chat.html
+  upload: chat.html
 
 - url: /
   static_files: index.html

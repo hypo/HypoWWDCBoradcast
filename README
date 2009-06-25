@@ -1,0 +1,59 @@
+hypoWWDCBroadcast v0.1
+
+Copyright (c) 2009, Bigs Labs., Licensed under BSD License.
+
+== 程式作用 What is it? ==
+
+   本程式為 hypo 進行 WWDC 轉播時所使用的程式。希望如果各位有類似的即時轉播需求的時候，可以省下大量的程式開發時間，將時間花在調整介面適合您的活動以及讓您有更多的時間籌劃更好的活動。
+   
+   This app is used by hypo during the WWDC live coverage event. We're releasing it for you now! We believe this can save your time when you want to hold some similar event. Our final hope is wanting you to use your time on adjusting its HTML interface for your event, and spend more time on your event. We love great and fun event as you do! 
+
+== 使用方式 Usage ==
+
+   wwdc 資料夾是完整的線上轉播以及聊天室的程式。要使用這個程式進行轉播您首先需要申請一個 AppEngine 帳號並且申請一個應用程式。請先將您的應用程式名稱填入 app.yaml 的 application: 一欄，替換掉原本的 hypowwdc。接著使用 Google AppEngine SDK 提供的工具上傳到您的應用程式中就可以使用了。
+   
+   如果您要發佈訊息，請先將所有需要發佈訊息的使用者的 Google Accounts 全部加入您 AppEngine 主控台的合作者名單中。接著瀏覽 http://您的程式網址/admin，使用您的 Google 帳號登入就可以看到後台。
+   
+   The WWDC folder itself is the complete program for the broadcasting and chatroom. To use this app, you have to apply an AppEngine account and have a application registered.
+   
+   You'll need to fill you application name into the "application:" field in app.yaml, replacing the "hypowwdc". Then you can use the tools provided in Google AppEngine SDK to upload the entire folder to your application. (and yes, it's running now!)
+   
+   To publish message, please add all users who requires admin privilege to the collbarator list in your AppEngine dashbaord. Navigate to "http://yourapps.domain/admin", and use your Google account to gain access of the management console.
+
+== 作者 Authors ==
+
+   Chien-An "itsZero" Cho (Main broadcast app.)
+   Yung-Luen "yllan" Lan (Chat app.)
+
+== 聯絡方式 Contact Us ==
+
+   如果您有任何建議或是任何 bug 想要回報，請使用 github 的 Issues 功能。您也可以透過 email 寄信到 info@hypo.cc，我們超喜歡你們的回響的！
+   
+   If you have any suggestion or bugs to report, please use the Issues Tab in the github. You can also contact us via email, just send your opinion to info@hypo.cc We're a big fans of users feedbacks!
+
+== 授權條款 License ==
+
+Copyright (c) 2009, Bigs Labs.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the <organization> nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY Bigs Labs. ''AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <copyright holder> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
