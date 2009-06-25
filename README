@@ -22,8 +22,8 @@ Copyright Bigs Labs. 2009, licensed under BSD License
    加入您 AppEngine 主控台的合作者名單中。
    接著瀏覽 http://您的程式網址/admin ，使用您的 Google 帳號登入就可以看到後台。
 
-   You’ll find the entire application in the WWDC folder.  Simply apply an Google App Engine account, and have your app 
-   registered.  Then you’re ready to go.
+   You’ll find the entire application in the WWDC folder.  Simply apply for an Google App Engine account, and have
+   your application registered.  Then you’re ready to go.
 
    However, you’ll locate app.yaml, and fill your own application name under the field “application:” replacing our
    default “hypowwdc”.  After this, use Google’s utility (provided in App Engine SDK) to upload the entire folder.
@@ -42,9 +42,10 @@ Copyright Bigs Labs. 2009, licensed under BSD License
 
 == 聯絡方式 CONTACT US ==
 
-   如果您有任何建議或是任何 bug 想要回報，請使用 github 的 Issues 功能。您也可以透過 email 寄信到 info@hypo.cc，我們超喜歡你們的迴響的！
+   如果您有任何建議或是任何 bug 想要回報，請使用 github 的 Issues 功能。
+   您也可以透過 email 寄信到 info@hypo.cc，我們超喜歡你們的迴響的！
    
-   We love feedbacks.  If there is anything that you believe we may help, please do not hesitate to use the Issue tab
+   We love feedbacks.  If there is anything that you believe we may help, please do not hesitate to use the Issues tab
    in github, or simply drop us a line at info@hypo.cc.  We look forward hearing from you all!
 
 
