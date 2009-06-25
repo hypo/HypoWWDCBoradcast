@@ -4,15 +4,20 @@ Copyright (c) 2009, Bigs Labs., Licensed under BSD License.
 
 == 程式作用 What is it? ==
 
-   本程式為 hypo 進行 WWDC 轉播時所使用的程式。希望如果各位有類似的即時轉播需求的時候，可以省下大量的程式開發時間，將時間花在調整介面適合您的活動以及讓您有更多的時間籌劃更好的活動。
+   本程式為 hypo 進行 WWDC 轉播時所使用的程式。希望如果各位有類似的即時轉播需求的時候，可以省下大量的程式開發時間，
+   將時間花在調整介面適合您的活動以及讓您有更多的時間籌劃更好的活動。
    
    This app is used by hypo during the WWDC live coverage event. We're releasing it for you now! We believe this can save your time when you want to hold some similar event. Our final hope is wanting you to use your time on adjusting its HTML interface for your event, and spend more time on your event. We love great and fun event as you do! 
 
 == 使用方式 Usage ==
 
-   wwdc 資料夾是完整的線上轉播以及聊天室的程式。要使用這個程式進行轉播您首先需要申請一個 AppEngine 帳號並且申請一個應用程式。請先將您的應用程式名稱填入 app.yaml 的 application: 一欄，替換掉原本的 hypowwdc。接著使用 Google AppEngine SDK 提供的工具上傳到您的應用程式中就可以使用了。
+   wwdc 資料夾是完整的線上轉播以及聊天室的程式。要使用這個程式進行轉播您首先需要申請一個 AppEngine 帳號並且申請一個應用程式。
+   請先將您的應用程式名稱填入 app.yaml 的 application: 一欄，替換掉原本的 hypowwdc。
+   接著使用 Google AppEngine SDK 提供的工具上傳到您的應用程式中就可以使用了。
    
-   如果您要發佈訊息，請先將所有需要發佈訊息的使用者的 Google Accounts 全部加入您 AppEngine 主控台的合作者名單中。接著瀏覽 http://您的程式網址/admin，使用您的 Google 帳號登入就可以看到後台。
+   如果您要發佈訊息，請先將所有需要發佈訊息的使用者的 Google Accounts 全部
+   加入您 AppEngine 主控台的合作者名單中。
+   接著瀏覽 http://您的程式網址/admin ，使用您的 Google 帳號登入就可以看到後台。
    
    The WWDC folder itself is the complete program for the broadcasting and chatroom. To use this app, you have to apply an AppEngine account and have a application registered.
    
